@@ -428,4 +428,4 @@ console.log(Math.round(random * 100));//between 1 to 100 round makes it to be 1
 //Document Object model (DOM)
 //DOM is a tree like structure
 
- 
+ console.log("Hard work is the key!");

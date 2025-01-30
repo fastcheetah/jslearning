@@ -428,4 +428,29 @@ console.log(Math.round(random * 100));//between 1 to 100 round makes it to be 1
 //Document Object model (DOM)
 //DOM is a tree like structure
 
- console.log("Hard work is the key!");
+ console.log("Hard work is the key!");    
+
+ //The Map  Method
+ const prices = [20,10,30,25,15,40,80,5];
+    const salePrices = prices.map((price) => {
+        return price / 2;
+    });//this is a callback function
+console.log(salePrices);
+
+//reduce method
+const scores = [10,20,60,40,70,90,30];
+
+const result21 = scores.reduce((acc,curr) => {
+    if(curr > 50){
+        acc++;
+    }
+    return acc;
+},0);
+console.log(result21);
+//find method
+const scores1 = [10,5,0,40,60,10,20,70];//returns the first value that meets the condition
+const firstHighScore = scores1.find((score) => {
+    return score > 50;//either true or false
+    //it  keeps checking through the array to find the first value that meets the condition
+});
+console.log(firstHighScore);

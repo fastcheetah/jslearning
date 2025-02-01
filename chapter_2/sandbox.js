@@ -454,3 +454,12 @@ const firstHighScore = scores1.find((score) => {
     //it  keeps checking through the array to find the first value that meets the condition
 });
 console.log(firstHighScore);
+//sort method
+const names8 = ['mario','shaun','chun-li','yoshi','luigi'];
+names8.sort();//sorts the array in alphabetical order and this changes the original array 
+
+const scores2 = [10,50,20,5,35,70,45];
+names.sort();
+scores2.sort();//sorts the array in ascending order
+console.log(scores2);//this looks at the first unit in the number and sorts it according to that
+scores2.reverse();//reverses the array

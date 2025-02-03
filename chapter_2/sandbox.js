@@ -463,3 +463,11 @@ names.sort();
 scores2.sort();//sorts the array in ascending order
 console.log(scores2);//this looks at the first unit in the number and sorts it according to that
 scores2.reverse();//reverses the array
+
+//dates and times
+const now = newDate();
+console.log('get full year:',now.getFullYear());
+
+const before = new Date('February 1 2019 7:30:59');
+const now2 = new Date();
+const mins = Math.round(now2.getTime() - before.getTime()) / 60000;

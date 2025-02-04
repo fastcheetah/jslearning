@@ -501,7 +501,8 @@ const days = Math.round(diff / 1000 / 60 /60 /24);//to get the days
 const days1 = Math.round(hours / 24);//to get the days
 console.log(mins,hours,hours1,days,days1);
 console.log(`the blog was written ${days} days ago`);
+
 //converting timestamps into date objects
 const timestamp = 1675938474990;
-
+console.log(new Date(timestamp));
 

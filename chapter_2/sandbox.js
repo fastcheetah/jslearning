@@ -478,3 +478,29 @@ console.log('getDay:',now3.getDay());//gets the day of the week also index-based
 console.log('getHours:',now3.getHours());//gets the hours
 console.log('getHours:',now3.getMinutes());
 console.log('getHours:',now3.getSeconds());
+
+//timestamps
+console.log('timestamp:',now3.getTime());//this is the amount of milliseconds that have passed since january 1st 1970
+
+//date strings
+console.log(now3.toDateString());
+console.log(now3.toTimeString());
+console.log(now3.toLocaleString());
+
+//timestamps and comparisons
+const before = new Date('February 1 2019 7:30:59');
+const now4 = new Date();
+// console.log(now4.getTime(), before.getTime());
+const diff = now4.getTime() - before.getTime();//to get the time between this two values
+console.log(diff);
+
+const mins = Math.round(diff / 1000 / 60);//to get the minutes
+const hours = Math.round(diff / 1000 / 60 /60);//to get the hours or you could do it this way
+const hours1 = Math.round(mins / 60);//to get the hours
+const days = Math.round(diff / 1000 / 60 /60 /24);//to get the days
+const days1 = Math.round(hours / 24);//to get the days
+console.log(mins,hours,hours1,days,days1);
+console.log(`the blog was written ${days} days ago`);
+
+
+

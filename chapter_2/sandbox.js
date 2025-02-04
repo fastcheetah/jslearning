@@ -465,9 +465,16 @@ console.log(scores2);//this looks at the first unit in the number and sorts it a
 scores2.reverse();//reverses the array
 
 //dates and times
-const now = newDate();
-console.log('get full year:',now.getFullYear());
+//dates and times
+const now3 = new Date();//we make the date object when the file runs
+console.log(now3);//By default, JavaScript will use the browser's time zone and display a date as a full text string:
+console.log(typeof now3);//this is an object
 
-const before = new Date('February 1 2019 7:30:59');
-const now2 = new Date();
-const mins = Math.round(now2.getTime() - before.getTime()) / 60000;
+//years,months,days,times
+console.log('getFullYear:',now3.getFullYear());//gets the full year
+console.log('getMonth:',now3.getMonth());//gets the full year but it gets the position of the month index-based so it starts from 0 for january and one for february
+console.log('getDate:',now3.getDate());//gets the date
+console.log('getDay:',now3.getDay());//gets the day of the week also index-based    
+console.log('getHours:',now3.getHours());//gets the hours
+console.log('getHours:',now3.getMinutes());
+console.log('getHours:',now3.getSeconds());

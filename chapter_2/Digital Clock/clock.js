@@ -15,5 +15,6 @@ const html = `
 <span>${s}</span>
 `
 clock.innerHTML = html;
+
 };
 setInterval(tick, 1000);

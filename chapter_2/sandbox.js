@@ -509,16 +509,25 @@ console.log(new Date(timestamp));
 //asynchronous code - start something now and finish it later
 //governs how we perform tasks which take some time to complete
 //javascript is a single threaded language and runs in a single thread
-
+const getTodos = (resource,callback) => {
 const request = new XMLHttpRequest();//this is an object that allows us to make requests to a server
 request.addEventListener('readystatechange',() => {
-    console.log(request, request.readyState);
     if(request.readyState === 4 && request.status === 200){
-        console.log(request, request.responseText);
+        callback(undefined,request.responseText);
     }else if (request.readyState === 4){
-        console.log("error fetching data");
+        callback("could not fetch data", undefined);
     }
 });//this is an event listener that listens for the ready state change~~
 
 request.open('GET','https://jsonplaceholder.typicode.com/todos/');//this is the type of request we want to make and the url we want to make it to
 request.send();//this sends the request to the server
+};//this is a function that takes in a resource and a callback function
+getTodos( (err,data) => {
+console.log("callback fired");
+if(err){
+    console.log(err);
+}else{
+    console.log(data);
+}
+});
+    

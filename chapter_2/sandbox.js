@@ -506,3 +506,17 @@ console.log(`the blog was written ${days} days ago`);
 const timestamp = 1675938474990;
 console.log(new Date(timestamp));
 
+//asynchronous code - start something now and finish it later
+//governs how we perform tasks which take some time to complete
+//javascript is a single threaded language and runs in a single thread
+
+const request = new XMLHttpRequest();//this is an object that allows us to make requests to a server
+request.addEventListener('readystatechange',() => {
+    console.log(request, request.readyState);
+    if(request.readyState === 4){
+        console.log(request.responseText);
+    }
+});//this is an event listener that listens for the ready state change~~
+
+request.open('GET','https://jsonplaceholder.typicode.com/todos/');//this is the type of request we want to make and the url we want to make it to
+request.send();//this sends the request to the server

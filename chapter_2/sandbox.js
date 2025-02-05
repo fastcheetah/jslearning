@@ -528,7 +528,7 @@ function callback(error, data) {
     }
   });//this is an event listener that listens for the ready state change~~
 
-request.open('GET','https://jsonplaceholder.typicode.com/todos/');//this is the type of request we want to make and the url we want to make it to
+request.open('GET','todos.json');//this is the type of request we want to make and the url we want to make it to
 request.send();//this sends the request to the server
 };//this is a function that takes in a resource and a callback function
 getTodos( (err,data) => {
@@ -537,6 +537,6 @@ if(err){
     console.log(err);
 }else{
     console.log(data);
-}
+} 
 });
     

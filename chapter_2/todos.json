@@ -1,1 +1,5 @@
- 
+[
+    { "text": "Buy milk", "author": "Rita" },
+    { "text": "Buy eggs", "author": "Josh" },
+    { "text": "Buy bread", "author": "Crystal" }
+]

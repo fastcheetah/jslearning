@@ -511,13 +511,22 @@ console.log(new Date(timestamp));
 //javascript is a single threaded language and runs in a single thread
 const getTodos = (resource,callback) => {
 const request = new XMLHttpRequest();//this is an object that allows us to make requests to a server
-request.addEventListener('readystatechange',() => {
-    if(request.readyState === 4 && request.status === 200){
-        callback(undefined,request.responseText);
-    }else if (request.readyState === 4){
-        callback("could not fetch data", undefined);
+function callback(error, data) {
+    if (error) {
+      console.error(error);
+    } else {
+      console.log(data);
     }
-});//this is an event listener that listens for the ready state change~~
+  }
+  
+  request.addEventListener('readystatechange', () => {
+    if (request.readyState === 4 && request.status === 200) {
+      const data = JSON.parse(request.responseText);
+      callback(undefined, data);
+    } else if (request.readyState === 4) {
+      callback("could not fetch data", undefined);
+    }
+  });//this is an event listener that listens for the ready state change~~
 
 request.open('GET','https://jsonplaceholder.typicode.com/todos/');//this is the type of request we want to make and the url we want to make it to
 request.send();//this sends the request to the server
